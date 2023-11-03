@@ -1,10 +1,10 @@
-import { Drawer, Divider, Switch } from "antd";
-import { useState } from "react";
-import { connect } from "react-redux";
-import { FireOutlined, SettingOutlined } from "@ant-design/icons";
-import { setThemeConfig } from "@/redux/modules/global/action";
-import { updateCollapse } from "@/redux/modules/menu/action";
-import SwitchDark from "@/components/SwitchDark";
+import { Drawer, Divider, Switch } from 'antd';
+import { useState } from 'react';
+import { connect } from 'react-redux';
+import { FireOutlined, SettingOutlined } from '@ant-design/icons';
+import { setThemeConfig } from '@/redux/modules/global/action';
+import { updateCollapse } from '@/redux/modules/menu/action';
+import SwitchDark from '@/components/SwitchDark';
 
 const Theme = (props: any) => {
 	const [visible, setVisible] = useState<boolean>(false);
@@ -15,7 +15,7 @@ const Theme = (props: any) => {
 
 	const setWeakOrGray = (checked: boolean, theme: string) => {
 		if (checked) return setThemeConfig({ ...themeConfig, weakOrGray: theme });
-		setThemeConfig({ ...themeConfig, weakOrGray: "" });
+		setThemeConfig({ ...themeConfig, weakOrGray: '' });
 	};
 
 	const onChange = (checked: boolean, keyName: string) => {
@@ -51,18 +51,18 @@ const Theme = (props: any) => {
 				<div className="theme-item">
 					<span>灰色模式</span>
 					<Switch
-						checked={weakOrGray === "gray"}
+						checked={weakOrGray === 'gray'}
 						onChange={e => {
-							setWeakOrGray(e, "gray");
+							setWeakOrGray(e, 'gray');
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>色弱模式</span>
 					<Switch
-						checked={weakOrGray === "weak"}
+						checked={weakOrGray === 'weak'}
 						onChange={e => {
-							setWeakOrGray(e, "weak");
+							setWeakOrGray(e, 'weak');
 						}}
 					/>
 				</div>
@@ -86,7 +86,7 @@ const Theme = (props: any) => {
 					<Switch
 						checked={!breadcrumb}
 						onChange={e => {
-							onChange(e, "breadcrumb");
+							onChange(e, 'breadcrumb');
 						}}
 					/>
 				</div>
@@ -95,7 +95,7 @@ const Theme = (props: any) => {
 					<Switch
 						checked={!tabs}
 						onChange={e => {
-							onChange(e, "tabs");
+							onChange(e, 'tabs');
 						}}
 					/>
 				</div>
@@ -104,7 +104,7 @@ const Theme = (props: any) => {
 					<Switch
 						checked={!footer}
 						onChange={e => {
-							onChange(e, "footer");
+							onChange(e, 'footer');
 						}}
 					/>
 				</div>

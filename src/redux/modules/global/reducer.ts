@@ -1,20 +1,20 @@
-import { AnyAction } from "redux";
-import { GlobalState } from "@/redux/interface";
-import produce from "immer";
-import * as types from "@/redux/mutation-types";
+import { AnyAction } from 'redux';
+import { GlobalState } from '@/redux/interface';
+import produce from 'immer';
+import * as types from '@/redux/mutation-types';
 
 const globalState: GlobalState = {
-	token: "",
-	userInfo: "",
-	assemblySize: "middle",
-	language: "",
+	token: '',
+	userInfo: '',
+	assemblySize: 'middle',
+	language: '',
 	themeConfig: {
 		// 默认 primary 主题颜色
-		primary: "#1890ff",
+		primary: '#1890ff',
 		// 深色模式
 		isDark: false,
 		// 色弱模式(weak) || 灰色模式(gray)
-		weakOrGray: "",
+		weakOrGray: '',
 		// 面包屑导航
 		breadcrumb: true,
 		// 标签页

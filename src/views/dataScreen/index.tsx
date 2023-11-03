@@ -1,17 +1,17 @@
-import { useLayoutEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { HOME_URL } from "@/config/config";
-import AgeRatioChart from "./components/AgeRatioChart";
-import AnnualUseChart from "./components/AnnualUseChart";
-import HotPlateChart from "./components/HotPlateChart";
-import MaleFemaleRatioChart from "./components/MaleFemaleRatioChart";
-import OverNext30Chart from "./components/OverNext30Chart";
-import PlatformSourceChart from "./components/PlatformSourceChart";
-import RealTimeAccessChart from "./components/RealTimeAccessChart";
-import ChinaMapChart from "./components/ChinaMapChart";
-import Headertime from "./components/DataHeaderTime";
-import dataScreenTitle from "./images/dataScreen-title.png";
-import "./index.less";
+import { useLayoutEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HOME_URL } from '@/config/config';
+import AgeRatioChart from './components/AgeRatioChart';
+import AnnualUseChart from './components/AnnualUseChart';
+import HotPlateChart from './components/HotPlateChart';
+import MaleFemaleRatioChart from './components/MaleFemaleRatioChart';
+import OverNext30Chart from './components/OverNext30Chart';
+import PlatformSourceChart from './components/PlatformSourceChart';
+import RealTimeAccessChart from './components/RealTimeAccessChart';
+import ChinaMapChart from './components/ChinaMapChart';
+import Headertime from './components/DataHeaderTime';
+import dataScreenTitle from './images/dataScreen-title.png';
+import './index.less';
 
 const DataScreen = () => {
 	const navigate = useNavigate();
@@ -37,13 +37,13 @@ const DataScreen = () => {
 	useLayoutEffect(() => {
 		if (dataScreenRef.current) {
 			dataScreenRef.current.style.transform = `scale(${getScale()}) translate(-50%, -50%)`;
-			dataScreenRef.current.style.width = `1920px`;
-			dataScreenRef.current.style.height = `1080px`;
+			dataScreenRef.current.style.width = '1920px';
+			dataScreenRef.current.style.height = '1080px';
 		}
 		// 为浏览器绑定事件
-		window.addEventListener("resize", resize);
+		window.addEventListener('resize', resize);
 		return () => {
-			window.removeEventListener("resize", resize);
+			window.removeEventListener('resize', resize);
 		};
 	}, []);
 

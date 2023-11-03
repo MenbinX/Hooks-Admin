@@ -1,5 +1,5 @@
-import { Button, Form, Input, Select, Space, message } from "antd";
-import "./index.less";
+import { Button, Form, Input, Select, Space, message } from 'antd';
+import './index.less';
 
 const ValidateForm = () => {
 	const { Option } = Select;
@@ -7,19 +7,19 @@ const ValidateForm = () => {
 
 	const onGenderChange = (value: string) => {
 		switch (value) {
-			case "male":
-				form.setFieldsValue({ note: "Hi, man!" });
+			case 'male':
+				form.setFieldsValue({ note: 'Hi, man!' });
 				return;
-			case "female":
-				form.setFieldsValue({ note: "Hi, lady!" });
+			case 'female':
+				form.setFieldsValue({ note: 'Hi, lady!' });
 				return;
-			case "other":
-				form.setFieldsValue({ note: "Hi there!" });
+			case 'other':
+				form.setFieldsValue({ note: 'Hi there!' });
 		}
 	};
 
 	const onFinish = (values: any) => {
-		message.success("提交的数据为 : " + JSON.stringify(values));
+		message.success('提交的数据为 : ' + JSON.stringify(values));
 		console.log(JSON.stringify(values));
 	};
 
@@ -29,9 +29,9 @@ const ValidateForm = () => {
 
 	const onFill = () => {
 		form.setFieldsValue({
-			user: "mark",
-			note: "Hello world!",
-			gender: "male"
+			user: 'mark',
+			note: 'Hello world!',
+			gender: 'male'
 		});
 	};
 

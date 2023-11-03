@@ -1,4 +1,4 @@
-import { RouteObject } from "@/routers/interface";
+import { RouteObject } from '@/routers/interface';
 
 /**
  * @description 获取localStorage
@@ -47,11 +47,11 @@ export const localClear = () => {
  */
 export const getBrowserLang = () => {
 	let browserLang = navigator.language ? navigator.language : navigator.browserLanguage;
-	let defaultBrowserLang = "";
-	if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
-		defaultBrowserLang = "zh";
+	let defaultBrowserLang = '';
+	if (browserLang.toLowerCase() === 'cn' || browserLang.toLowerCase() === 'zh' || browserLang.toLowerCase() === 'zh-cn') {
+		defaultBrowserLang = 'zh';
 	} else {
-		defaultBrowserLang = "en";
+		defaultBrowserLang = 'en';
 	}
 	return defaultBrowserLang;
 };
@@ -62,9 +62,9 @@ export const getBrowserLang = () => {
  * @returns array
  */
 export const getOpenKeys = (path: string) => {
-	let newStr: string = "";
+	let newStr: string = '';
 	let newArr: any[] = [];
-	let arr = path.split("/").map(i => "/" + i);
+	let arr = path.split('/').map(i => '/' + i);
 	for (let i = 1; i < arr.length - 1; i++) {
 		newStr += arr[i];
 		newArr.push(newStr);
@@ -103,7 +103,7 @@ export const getBreadcrumbList = (path: string, menuList: Menu.MenuOptions[]) =>
 			tempPath.push(node);
 			// 找到符合条件的节点，通过throw终止掉递归
 			if (node.path === path) {
-				throw new Error("GOT IT!");
+				throw new Error('GOT IT!');
 			}
 			if (node.children && node.children.length > 0) {
 				for (let i = 0; i < node.children.length; i++) {
@@ -148,7 +148,7 @@ export const findAllBreadcrumb = (menuList: Menu.MenuOptions[]): { [key: string]
  */
 export function handleRouter(routerList: Menu.MenuOptions[], newArr: string[] = []) {
 	routerList.forEach((item: Menu.MenuOptions) => {
-		typeof item === "object" && item.path && newArr.push(item.path);
+		typeof item === 'object' && item.path && newArr.push(item.path);
 		item.children && item.children.length && handleRouter(item.children, newArr);
 	});
 	return newArr;
@@ -160,8 +160,8 @@ export function handleRouter(routerList: Menu.MenuOptions[], newArr: string[] = 
  * @return string
  */
 export const isType = (val: any) => {
-	if (val === null) return "null";
-	if (typeof val !== "object") return typeof val;
+	if (val === null) return 'null';
+	if (typeof val !== 'object') return typeof val;
 	else return Object.prototype.toString.call(val).slice(8, -1).toLocaleLowerCase();
 };
 
@@ -178,7 +178,7 @@ export const deepCopy = <T>(obj: any): T => {
 		newObj = {};
 	}
 	for (let attr in obj) {
-		if (typeof obj[attr] === "object") {
+		if (typeof obj[attr] === 'object') {
 			newObj[attr] = deepCopy(obj[attr]);
 		} else {
 			newObj[attr] = obj[attr];

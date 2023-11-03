@@ -1,14 +1,14 @@
-import { Tabs, message } from "antd";
-import { HomeFilled } from "@ant-design/icons";
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { HOME_URL } from "@/config/config";
-import { connect } from "react-redux";
-import { setTabsList } from "@/redux/modules/tabs/action";
-import { routerArray } from "@/routers";
-import { searchRoute } from "@/utils/util";
-import MoreButton from "./components/MoreButton";
-import "./index.less";
+import { Tabs, message } from 'antd';
+import { HomeFilled } from '@ant-design/icons';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { HOME_URL } from '@/config/config';
+import { connect } from 'react-redux';
+import { setTabsList } from '@/redux/modules/tabs/action';
+import { routerArray } from '@/routers';
+import { searchRoute } from '@/utils/util';
+import MoreButton from './components/MoreButton';
+import './index.less';
 
 const LayoutTabs = (props: any) => {
 	const { tabsList } = props.tabs;
@@ -50,7 +50,7 @@ const LayoutTabs = (props: any) => {
 				navigate(nextTab.path);
 			});
 		}
-		message.success("你删除了Tabs标签 😆😆😆");
+		message.success('你删除了Tabs标签 😆😆😆');
 		setTabsList(tabsList.filter((item: Menu.MenuOptions) => item.path !== tabPath));
 	};
 
@@ -74,7 +74,7 @@ const LayoutTabs = (props: any) => {
 									key={item.path}
 									tab={
 										<span>
-											{item.path == HOME_URL ? <HomeFilled /> : ""}
+											{item.path == HOME_URL ? <HomeFilled /> : ''}
 											{item.title}
 										</span>
 									}

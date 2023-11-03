@@ -1,4 +1,4 @@
-import { useTimes } from "@/hooks/useTime";
+import { useTimes } from '@/hooks/useTime';
 const DataHeaderTime = () => {
 	const { time } = useTimes();
 

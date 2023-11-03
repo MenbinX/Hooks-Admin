@@ -1,8 +1,8 @@
-import { Button, Dropdown, Menu } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { HOME_URL } from "@/config/config";
+import { Button, Dropdown, Menu } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { HOME_URL } from '@/config/config';
 
 const MoreButton = (props: any) => {
 	const { t } = useTranslation();
@@ -22,27 +22,27 @@ const MoreButton = (props: any) => {
 		<Menu
 			items={[
 				{
-					key: "1",
-					label: <span>{t("tabs.closeCurrent")}</span>,
+					key: '1',
+					label: <span>{t('tabs.closeCurrent')}</span>,
 					onClick: () => props.delTabs(pathname)
 				},
 				{
-					key: "2",
-					label: <span>{t("tabs.closeOther")}</span>,
+					key: '2',
+					label: <span>{t('tabs.closeOther')}</span>,
 					onClick: () => closeMultipleTab(pathname)
 				},
 				{
-					key: "3",
-					label: <span>{t("tabs.closeAll")}</span>,
+					key: '3',
+					label: <span>{t('tabs.closeAll')}</span>,
 					onClick: () => closeMultipleTab()
 				}
 			]}
 		/>
 	);
 	return (
-		<Dropdown overlay={menu} placement="bottom" arrow={{ pointAtCenter: true }} trigger={["click"]}>
+		<Dropdown overlay={menu} placement="bottom" arrow={{ pointAtCenter: true }} trigger={['click']}>
 			<Button className="more-button" type="primary" size="small">
-				{t("tabs.more")} <DownOutlined />
+				{t('tabs.more')} <DownOutlined />
 			</Button>
 		</Dropdown>
 	);

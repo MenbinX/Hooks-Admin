@@ -5,7 +5,7 @@ const Github = () => {
 				Github 仓库：
 				<a href="https://github.com/HalseySpicy/Hooks-Admin" target="_blank" rel="noreferrer">
 					https://github.com/HalseySpicy/Hooks-Admin
-				</a>{" "}
+				</a>{' '}
 				🍒🍉🍊
 			</span>
 		</div>

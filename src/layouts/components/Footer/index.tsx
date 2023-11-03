@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import "./index.less";
+import { connect } from 'react-redux';
+import './index.less';
 
 const LayoutFooter = (props: any) => {
 	const { themeConfig } = props;

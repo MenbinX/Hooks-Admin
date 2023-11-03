@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Menu, Spin } from "antd";
-import { findAllBreadcrumb, getOpenKeys, handleRouter, searchRoute } from "@/utils/util";
-import { setMenuList } from "@/redux/modules/menu/action";
-import { setBreadcrumbList } from "@/redux/modules/breadcrumb/action";
-import { setAuthRouter } from "@/redux/modules/auth/action";
-import { getMenuList } from "@/api/modules/login";
-import { connect } from "react-redux";
-import type { MenuProps } from "antd";
-import * as Icons from "@ant-design/icons";
-import Logo from "./components/Logo";
-import "./index.less";
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Menu, Spin } from 'antd';
+import { findAllBreadcrumb, getOpenKeys, handleRouter, searchRoute } from '@/utils/util';
+import { setMenuList } from '@/redux/modules/menu/action';
+import { setBreadcrumbList } from '@/redux/modules/breadcrumb/action';
+import { setAuthRouter } from '@/redux/modules/auth/action';
+import { getMenuList } from '@/api/modules/login';
+import { connect } from 'react-redux';
+import type { MenuProps } from 'antd';
+import * as Icons from '@ant-design/icons';
+import Logo from './components/Logo';
+import './index.less';
 
 const LayoutMenu = (props: any) => {
 	const { pathname } = useLocation();
@@ -33,13 +33,13 @@ const LayoutMenu = (props: any) => {
 	};
 
 	// 定义 menu 类型
-	type MenuItem = Required<MenuProps>["items"][number];
+	type MenuItem = Required<MenuProps>['items'][number];
 	const getItem = (
 		label: React.ReactNode,
 		key?: React.Key | null,
 		icon?: React.ReactNode,
 		children?: MenuItem[],
-		type?: "group"
+		type?: 'group'
 	): MenuItem => {
 		return {
 			key,
@@ -91,9 +91,9 @@ const LayoutMenu = (props: any) => {
 
 	// 点击当前菜单跳转页面
 	const navigate = useNavigate();
-	const clickMenu: MenuProps["onClick"] = ({ key }: { key: string }) => {
+	const clickMenu: MenuProps['onClick'] = ({ key }: { key: string }) => {
 		const route = searchRoute(key, props.menuList);
-		if (route.isLink) window.open(route.isLink, "_blank");
+		if (route.isLink) window.open(route.isLink, '_blank');
 		navigate(key);
 	};
 
